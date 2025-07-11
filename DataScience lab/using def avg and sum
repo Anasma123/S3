@@ -1,0 +1,9 @@
+def maaark(marks):
+    total = sum(marks)
+    average = total / len(marks) if marks else 0
+    return total, average
+
+
+marks = [80, 90, 75, 85]
+total, avg = maaark(marks)
+print(f"Sum: {total}, Average: {avg}")
