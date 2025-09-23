@@ -44,23 +44,27 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_home:
-                startActivity(new Intent(this, HomeActivity.class));
-                return true;
-            case R.id.menu_profile:
-                startActivity(new Intent(this, ProfileActivity.class));
-                return true;
-            case R.id.menu_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                return true;
-            case R.id.option_menu:
-                // Handle logout logic
-                Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+
+        if (id == R.id.menu_home) {
+            startActivity(new Intent(this, HomeActivity.class));
+            return true;
         }
+        if (id == R.id.menu_profile) {
+            startActivity(new Intent(this, ProfileActivity.class));
+            return true;
+        }
+        if (id == R.id.menu_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+        if (id == R.id.option_menu) {
+            // Handle logout logic
+            Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
+
 
 }
